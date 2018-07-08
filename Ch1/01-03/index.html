@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VUE js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="app">
+    <h1>{{msg}}</h1>
+    <!-- <a href="{{url}}"></a> -->
+    <a v-bind:href="url">Google</a>
+    <!-- colon shorthand -->
+    <p>
+      <form>
+          Name: <input type="text" name="" :value="name">
+      </form>
+    </p>
+    </div>
+    <script type="text/javascript">
+      var vm = new Vue({
+        el: '.app',
+        data:{
+          msg: 'Hello from Vue!',
+          url: 'https://www.google.com/',
+          name: 'Vue'
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VUE js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <label for="email">Email:</label><input type="text" name="email" v-model="email"/>
+      <p>You entered: {{email}}</p>
+    </div>
+    <script type="text/javascript">
+      var vm = new Vue({
+        el: '.app',
+        data:{
+          email: ''
+        }
+      });
+    </script>
+  </body>
+</html>
