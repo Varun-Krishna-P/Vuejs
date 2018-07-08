@@ -1,2 +1,2 @@
 # Vuejs
-Vue js examples.
+Vue js examples created during learning vue js course.
