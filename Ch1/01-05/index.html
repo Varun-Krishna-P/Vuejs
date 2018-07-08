@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VUE js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <label for="email">Email:</label><input type="text" name="email" v-model="email"/>
+      <!-- lazy event listener for vmodel -->
+      <label for="email">Email Lazy:</label><input type="text" name="email" v-model.lazy="email"/>
+      <!-- converts input to numbers  -->
+      <label for="age">Age number:</label><input type="number" name="age" v-model.number="age"/>
+      <!-- trims the spaces -->
+      <label for="email">Email trims:</label><input type="text" name="email" v-model.trim="email"/>
+      <br>
+      <div v-for="interest in interests">
+        {{interest}} <input type="checkbox" v-model="selectedInterests" :value="interest">
+      </div>
+
+      <p>You entered: {{email}}</p>
+      <!-- v-show uses the css display:none to hide the element from the user -->
+      <!-- <p v-show='selectedInterests.length > 0'>You have selected: {{selectedInterests.join(', ' )}}</p> -->
+      <!-- v-if directive hides the entire element from the user by replacing it with html comment -->
+      <p v-if='selectedInterests.length > 2'>Awesome!!!</p>
+      <p v-else-if="selectedInterests.length > 0">You have selected: {{selectedInterests.join(', ' )}}</p>
+      <p v-else>Nothing Selected</p>
+      <div v-for='value in addresses'>
+        <div v-for='(val, key, index) in value'>
+          {{key}}, {{val}}, - {{index + 1}}
+        </div>
+      </div>
+      <div v-for='i in 10'>
+        {{i}}
+      </div>
+    </div>
+    <script type="text/javascript">
+      var vm = new Vue({
+        el: '.app',
+        data:{
+          email: '',
+          age: '',
+          interests: ["Running", "Cycling", "Swimming"],
+          selectedInterests:[],
+          addresses:[
+            {
+              city: 'Asdf',
+              state: 'State',
+              zip: '12345'
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

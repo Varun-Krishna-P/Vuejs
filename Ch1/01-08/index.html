@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VUE js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="app">
+      <div :class="{'blue-container': cold, 'red-container': hot}">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+      Select Color: <input type="text" name="color" v-model.lazy="bgColorClass">
+      <div :class="[selectedClass, bgColorClass, {'dashed-border': selected}]"></div>
+      <div :class="cssClasses"></div>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: '.app',
+        data:{
+          cold: false,
+          hot: true,
+          selectedClass: 'blue-container',
+          bgColorClass: 'red',
+          selected: true,
+          cssClasses:{
+            'blue-container': true,
+            'dashed-border': true,
+            red: false
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

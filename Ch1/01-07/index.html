@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VUE js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <div>
+        Select Font size: <input type="number" name="myFontSize" v-model.number="myFontSize">
+      </div>
+      <div :style="{border: '1px solid green', padding: '10px', fontSize: myFontSize + 'px', 'margin-bottom': '2px'}">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+      <div :style="fancyDiv">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+      <div :style="[fancyDiv, fancierDiv]"
+        @mouseover = "fancierDiv.border= '1px dashed red'"
+        @mouseout =  "fancierDiv.border= '1px dashed black'"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: '.app',
+        data:{
+          myFontSize: 24,
+          fancyDiv:{
+            padding: '10px',
+            backgroundColor: 'lightGrey',
+            marginTop: '5px',
+            borderRadius: '15px'
+          },
+          fancierDiv:{
+            color: 'lightseagreen',
+            border: '1px dashed black',
+            fontWeight: '900'
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -8,13 +8,28 @@
   <body>
     <div class="app">
       <label for="email">Email:</label><input type="text" name="email" v-model="email"/>
+      <!-- lazy event listener for vmodel -->
+      <label for="email">Email Lazy:</label><input type="text" name="email" v-model.lazy="email"/>
+      <!-- converts input to numbers  -->
+      <label for="age">Age number:</label><input type="number" name="age" v-model.number="age"/>
+      <!-- trims the spaces -->
+      <label for="email">Email trims:</label><input type="text" name="email" v-model.trim="email"/>
+      <br>
+      Running: <input type="checkbox" v-model="selectedInterests" name="selectedInterests" value="Running">
+      Cycling: <input type="checkbox" v-model="selectedInterests" name="selectedInterests" value="Cycling">
+      Swimming: <input type="checkbox" v-model="selectedInterests" name="selectedInterests" value="Swimming">
+
       <p>You entered: {{email}}</p>
+      <p>You entered: {{age}}</p>
+      <p>You have selected: {{selectedInterests.join(', ' )}}</p>
     </div>
     <script type="text/javascript">
       var vm = new Vue({
         el: '.app',
         data:{
-          email: ''
+          email: '',
+          age: '',
+          selectedInterests:[]
         }
       });
     </script>

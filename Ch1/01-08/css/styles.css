@@ -1,0 +1,39 @@
+.red-container{
+  border: 1px solid #b71c1c;
+  background-color: #f44336;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.blue-container{
+  border: 1px solid #0d47a1;
+  background-color: #64b5f6;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.dashed-border{
+  border: 2px dashed black;
+}
+
+.red{
+  background-color: red;
+}
+.blue{
+  background-color: blue;
+}
+
+.green{
+  background-color: green;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+
+
+div{
+  padding: 2px;
+  margin-bottom: 6px;
+}
